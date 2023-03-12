@@ -1,0 +1,326 @@
+@font-face {
+    font-family: "FixedSys";
+    src: url("./FixedSys.woff");
+    font-weight: normal;
+    font-style: normal;
+    -webkit-font-smoothing: none;
+    -moz-osx-font-smoothing: none;
+    font-smooth: never;
+}
+
+* { font-family:FixedSys; font-size:16px; cursor:url(cursor.html),auto; }
+body { color:#E3E3E3;  repeat fixed left; }
+table { border-style:none; border-collapse:collapse; }
+ul, li { list-style-type:none; margin:0px; padding:0px; }
+a  { text-decoration:none; color:#AA99FF; }
+a:visited  { color:#FF9999; }
+a:hover  { color:#FFFF99; }
+a:active  { color:#99FF99; }
+h1 { font-weight: normal;text-align:center; }
+h2 { color:#8888FF; }
+h3 { color:#FF88FF; }
+h4 { color:#FFFF99; }
+h2, h3, h4 {
+  left:13px;
+  text-indent:8px; position:relative;
+  padding-top:4px; padding-bottom:4px;
+  width:220px;
+  border:3px double #232D4B;
+  background-color:#050F28;
+}
+p { text-indent:32px; }
+o { color:#00050E; background-color:#00050E; }
+o:hover  { color:#E3E3E3; background-color:#050F28; }
+
+/* Left-hand navigation pane */
+.navigation {
+  position:fixed; left:0px; top:0px; right:0px; bottom:124px;
+  width: 240px; padding: 16px;
+  background-color: #192341;
+  border-color:#FFB400; border-right-style:solid; border-right-width:2px;
+  overflow-y:auto; overflow-x:hidden;
+  z-index:1;
+}
+.nav_head { position:relative; left:-16px; }
+.nav_head  a:link, .nav_head  a:visited, .nav_null, .nav_null_head {
+  display:block; width:240px; padding:8px; padding-left:16px; padding-right:16px;
+  background-color:#192341;
+}
+.nav_null { background-color:#232D4B; color:#999999; font-style: italic; padding-left:40px;}
+.nav_null_head { background-color:#232D4B; color:#999999; font-style: italic; }
+.nav_body  a:link, .nav_body  a:visited {
+  display:block; width:240px; padding:8px; padding-left:24px; padding-right:8px;
+  background-color:#0F1937;
+}
+.nav_item  {
+  display:block; width:240px; padding:8px; padding-left:32px; padding-right:0px;
+  background-color:#192341; color:#E3E3E3; font-style: italic;
+}
+.nav_subitem a:link, .nav_subitem  a:visited {
+  display:block; width:240px; padding:8px; padding-left:40px; padding-right:-8px;
+  background-color:#050F28;
+}
+.nav_head a:hover, .nav_head  a:active, 
+.nav_body a:hover, .nav_body a:active,
+.nav_item a:hover, .nav_item a:active,
+.nav_subitem a:hover, .nav_subitem a:active { background-color:#232D4B; }
+
+/* Page layout and padding */
+.page { 
+  position:absolute; left:274px; top:0px; right:0px; bottom:0px;
+  overflow-y:scroll; 
+}
+.page_table { display:table; height:100%; width:100%; }
+.table_row { display:table-row; height:100%; }
+.pad { display:table-cell; position:relative; min-width:16px; width:10%; }
+.middle {
+  display:table-cell; z-index:0;
+  position:relative; min-width:640px; width:50%;
+  background-color:#192341;
+  border-color:#FFB400; border-left-style:solid; border-left-width:2px; border-right-style:solid; border-right-width:2px;
+}
+.content { position:relative; padding:16px; }
+.content p { padding:16px; padding-top:4px; padding-bottom:4px; }
+.deco_nav {
+  position:fixed; top: -16px; bottom: 0px; left: 274px; width: 6px; height: 100%;
+  background: url('deco.html') 0 0; background-repeat: repeat-y; background-position: left;
+}
+.deco_right {
+  position:absolute; top: 0px; bottom: 0px; left: 0px; width: 6px; height: 100%;
+  background: url('deco.html') 0 0; background-repeat: repeat-y; background-position: left;
+}
+.deco_left {
+  position:absolute; top: 0px; bottom: 0px; right: 0px; width: 6px; height: 100%;
+  background: url('deco.html') 0 6px; background-repeat: repeat-y; background-position: right;
+}
+
+/* Advertisement tables */
+.tumblr {
+  display:inline-block; text-indent:-9999px; overflow:hidden; width:81px; height:20px;
+  background:url('../../platform.tumblr.com/v1/share_1.png') top left no-repeat transparent;
+}
+.follow_group {
+  position:fixed; bottom:0px; left:0px; height:108px; 
+  text-align:left; width:240px; padding:8px 16px;
+  background-color:#192341;
+  border-color:#FFB400; border-right-style:solid; border-right-width:2px;
+}
+.follow_item { height:20px; padding-top:8px; padding-bottom:8px; }
+
+/* Basic content layout */
+.page_title, .page_subtitle, .page_list, .walk_list, .codebox {
+  position:relative; left:16%; top:16px; right:16%; bottom:0px;
+  padding-top:8px; padding-bottom:8px;
+  width:68%;
+  color:#E3E3E3; text-align:center;
+  border:3px double #232D4B;
+  background-color:#050F28;
+}
+.page_subtitle { color:#FF9999; left:32%; right:32%; width:36%; }
+.page_list, .walk_list { padding-top:0px; padding-bottom:0px; left:10%; right:10%; width:80%; }
+.walk_list { text-align:left; }
+.codebox { top:8px; margin-left:-8px; padding:8px; left:10%; right:10%; width:80%; }
+.list_main  { position:relative; left:0px; }
+.list_main  a:link, .list_main a:visited, .list_main_null, .list_main_head {
+  display:block; width:100%; padding-top:8px; padding-bottom:8px;
+  background-color:#050F28;
+}
+.list_item  a:link, .list_item a:visited {
+  display:block; width:100%; padding-top:8px; padding-bottom:8px;
+  background-color:#000A1E;
+}
+.list_main_null { background-color:#0A1432; color:#999999; font-style:italic; }
+.list_main_head, .list_lp, .list_lpn { background-color:#0F1937; text-align:center; color:#88CC88; }
+.list_lp, .list_lpn { text-align:left; text-indent:16px; }
+.list_lp { list-style-type:number; color:#CCCCCC; }
+.list_main a:hover, .list_main a:active { background-color:#192341; }
+.img_frame { padding-top:8px; padding-bottom:8px; text-align:center; }
+.advice { text-align:center; color:#88CC88; }
+.warning { text-align:center; color:#FF0000; }
+.screen_frame { text-align:center; }
+.screen { margin:8px; margin-top:10px; margin-bottom:10px; }
+
+/* Map and image content layout */
+.mapdiv { position:absolute; width:auto; margin-left:3px; margin-top:3px; }
+.mapimg, .screen { position:relative; border:3px double #232D4B; border-image:url("0.html") 3 3 3 3 stretch; }
+.mapitem, .mapitem_quote, .mapitem_save, .mapitem_heal, .mapitem_life, .mapitem_exp, .mapitem_chest, 
+.mapitem_sparkle, .mapitem_fire, .mapitem_rope, .mapitem_lion, .mapitem_up, .mapitem_right, 
+.mapitem_down, .mapitem_left, .mapitem_null, .mapitem_door, .mapitem_console, .mapitem_open, 
+.mapitem_sand, .mapitem_tele, .mapitem_bed, .mapitem_arch, .mapitem_t1, .mapitem_t2, .mapitem_t3, 
+.mapitem_t4, .mapitem_t5, .mapitem_t6, .mapitem_t7  { z-index:1; position:relative; width:auto; }
+.mapitem_quote { background:url('mapitems.html') 0 0; width:16px; height:16px; }
+.mapitem_save{ background:url('mapitems.html') 0 -16px; width:16px; height:16px; }
+.mapitem_heal { background:url('mapitems.html') 0 -32px; width:16px; height:16px; }
+.mapitem_life { background:url('mapitems.html') 0 -48px; width:16px; height:16px; }
+.mapitem_exp { background:url('mapitems.html') 0 -64px; width:16px; height:16px; }
+.mapitem_chest { background:url('mapitems.html') -16px 0; width:16px; height:16px; }
+.mapitem_sparkle { background:url('mapitems.html') -16px -16px; width:16px; height:16px; }
+.mapitem_fire { background:url('mapitems.html') -16px -32px; width:16px; height:16px; }
+.mapitem_rope { background:url('mapitems.html') -16px -48px; width:16px; height:16px; }
+.mapitem_lion { background:url('mapitems.html') -16px -64px; width:16px; height:16px; }
+.mapitem_up { background:url('mapitems.html') -32px 0; width:16px; height:16px; }
+.mapitem_right { background:url('mapitems.html') -32px -16px; width:16px; height:16px; }
+.mapitem_down { background:url('mapitems.html') -32px -32px; width:16px; height:16px; }
+.mapitem_left { background:url('mapitems.html') -32px -48px; width:16px; height:16px; }
+.mapitem_null { background:url('mapitems.html') -32px -64px; width:16px; height:16px; }
+.mapitem_door { background:url('mapitems.html') -48px 0; width:16px; height:24px; margin-top:8px; }
+.mapitem_console { background:url('mapitems.html') -64px 0; width:16px; height:24px; margin-top:8px; }
+.mapitem_open { background:url('mapitems.html') -48px -24px; width:16px; height:24px; margin-top:8px; }
+.mapitem_sand { background:url('mapitems.html') -64px -24px; width:16px; height:24px; margin-top:8px; }
+.mapitem_tele { background:url('mapitems.html') -48px -48px; width:24px; height:32px; margin-left:-4px; }
+.mapitem_bed { background:url('mapitems.html') -80px 0; width:32px; height:16px; }
+.mapitem_arch { background:url('mapitems.html') -80px -16px; width:32px; height:32px; }
+.mapitem_t1 { background:url('mapitems.html') -80px -48px; width:32px; height:16px; }
+.mapitem_t2 { background:url('mapitems.html') -80px -64px; width:32px; height:16px; }
+.mapitem_t3 { background:url('mapitems.html') -112px 0; width:32px; height:16px; }
+.mapitem_t4 { background:url('mapitems.html') -112px -16px; width:32px; height:16px; }
+.mapitem_t5 { background:url('mapitems.html') -112px -32px; width:32px; height:16px; }
+.mapitem_t6 { background:url('mapitems.html') -112px -48px; width:32px; height:16px; }
+.mapitem_t7 { background:url('mapitems.html') -112px -64px; width:32px; height:16px; }
+.maplink { background-color:transparent; display:inline; }
+.mapbackground { z-index:0; position:relative; }
+
+/* Collectables */
+.col_frame { padding:16px; }
+.col_table { display:table; height:100%; width:100%; padding-top:16px; padding-bottom:16px; }
+.col_cell { width:32px; display:table-cell; border:3px double #232D4B; background:#050F28; }
+.col_text { padding:8px; width:auto; display:table-cell; vertical-align:top; }
+.col { width:80px; height:80px; }
+.reward { width:32px; height:32px; }
+/* lifecaps */
+.lc01 { background:url('walkthrough/col/lifecaps.html') 0 0; }
+.lc02 { background:url('walkthrough/col/lifecaps.html') -80px 0; }
+.lc03 { background:url('walkthrough/col/lifecaps.html') -160px 0; }
+.lc04 { background:url('walkthrough/col/lifecaps.html') -240px 0; }
+.lc05 { background:url('walkthrough/col/lifecaps.html') -320px 0; }
+.lc06 { background:url('walkthrough/col/lifecaps.html') -400px 0; }
+.lc07 { background:url('walkthrough/col/lifecaps.html') -480px 0; }
+.lc08 { background:url('walkthrough/col/lifecaps.html') -560px 0; }
+.lc09 { background:url('walkthrough/col/lifecaps.html') -640px 0; }
+.lc10 { background:url('walkthrough/col/lifecaps.html') -720px 0; }
+.lc11 { background:url('walkthrough/col/lifecaps.html') -800px 0; }
+.lc12 { background:url('walkthrough/col/lifecaps.html') -880px 0; }
+.lc13 { background:url('walkthrough/col/lifecaps.html') -960px 0; }
+.lc14 { background:url('walkthrough/col/lifecaps.html') 0 -80px; }
+.lc15 { background:url('walkthrough/col/lifecaps.html') -80px -80px; }
+.ng01 { background:url('walkthrough/col/lifecaps.html') -160px -80px; }
+.ng02 { background:url('walkthrough/col/lifecaps.html') -240px -80px; }
+.ng03 { background:url('walkthrough/col/lifecaps.html') -320px -80px; }
+.ng04 { background:url('walkthrough/col/lifecaps.html') -400px -80px; }
+.ng05 { background:url('walkthrough/col/lifecaps.html') -480px -80px; }
+.ng06 { background:url('walkthrough/col/lifecaps.html') -560px -80px; }
+.ng07 { background:url('walkthrough/col/lifecaps.html') -640px -80px; }
+.ng08 { background:url('walkthrough/col/lifecaps.html') -720px -80px; }
+.ng09 { background:url('walkthrough/col/lifecaps.html') -800px -80px; }
+.ng10 { background:url('walkthrough/col/lifecaps.html') -880px -80px; }
+.ng11 { background:url('walkthrough/col/lifecaps.html') -960px -80px; }
+/* missiles */
+.ml1 { background:url('walkthrough/col/missiles.html') 0 0; }
+.ml2 { background:url('walkthrough/col/missiles.html') -80px 0; }
+.ml3 { background:url('walkthrough/col/missiles.html') -160px 0; }
+.ml4 { background:url('walkthrough/col/missiles.html') 0 -80px; }
+.ml5 { background:url('walkthrough/col/missiles.html') -80px -80px; }
+.ml6 { background:url('walkthrough/col/missiles.html') -160px -80px; }
+.ml7 { background:url('walkthrough/col/missiles.html') 0 -160px; }
+.ml8 { background:url('walkthrough/col/missiles.html') -80px -160px; }
+.ml9 { background:url('walkthrough/col/missiles.html') -160px -160px; }
+/* snake */
+.sn1 { background:url('walkthrough/col/snake.html') 0 0; }
+.sn2 { background:url('walkthrough/col/snake.html') -80px 0; }
+.sn3 { background:url('walkthrough/col/snake.html') -160px 0; }
+.sn4 { background:url('walkthrough/col/snake.html') -240px 0; }
+.sn5 { background:url('walkthrough/col/snake.html') 0 -80px; }
+.sn6 { background:url('walkthrough/col/snake.html') -80px -80px; }
+.sn7 { background:url('walkthrough/col/snake.html') -160px -80px; }
+/* bubbler */
+.bb1 { background:url('walkthrough/col/bubbler.html') 0 0; }
+.bb2 { background:url('walkthrough/col/bubbler.html') -80px 0; }
+.bb3 { background:url('walkthrough/col/bubbler.html') -160px 0; }
+.bb4 { background:url('walkthrough/col/bubbler.html') -240px 0; }
+.bb5 { background:url('walkthrough/col/bubbler.html') 0 -80px; }
+.bb6 { background:url('walkthrough/col/bubbler.html') -80px -80px; }
+.bb7 { background:url('walkthrough/col/bubbler.html') -160px -80px; }
+/* machgun */
+.mg1 { background:url('walkthrough/col/machgun.html') 0 0; }
+.mg2 { background:url('walkthrough/col/machgun.html') -80px 0; }
+.mg3 { background:url('walkthrough/col/machgun.html') -160px 0; }
+.mg4 { background:url('walkthrough/col/machgun.html') -240px 0; }
+.mg5 { background:url('walkthrough/col/machgun.html') 0 -80px; }
+.mg6 { background:url('walkthrough/col/machgun.html') -80px -80px; }
+.mg7 { background:url('walkthrough/col/machgun.html') -160px -80px; }
+/* lifepot */
+.lp1 { background:url('walkthrough/col/snake.html') -240px -80px; }
+.lp2 { background:url('walkthrough/col/bubbler.html') -240px -80px; }
+.lp3 { background:url('walkthrough/col/machgun.html') -240px -80px; }
+
+/* Secret Items */
+.sc01 { background:url('walkthrough/col/secrets.html') 0 0; }
+.sc02 { background:url('walkthrough/col/secrets.html') -80px 0; }
+.sc03 { background:url('walkthrough/col/secrets.html') -160px 0; }
+.sc04 { background:url('walkthrough/col/secrets.html') -240px 0; }
+.sc05 { background:url('walkthrough/col/secrets.html') 0 -80px;; }
+.sc06 { background:url('walkthrough/col/secrets.html') -80px -80px; }
+.sc07 { background:url('walkthrough/col/secrets.html') -160px -80px; }
+.sc08 { background:url('walkthrough/col/secrets.html') -240px -80px; }
+.sc09 { background:url('walkthrough/col/secrets.html') 0 -160px; }
+.sc10 { background:url('walkthrough/col/secrets.html') -80px -160px }
+.sc11 { background:url('walkthrough/col/secrets.html') -160px -160px; }
+.sc12 { background:url('walkthrough/col/secrets.html') -240px -160px; }
+.sc13 { background:url('walkthrough/col/secrets.html') 0 -240px; }
+.sc14 { background:url('walkthrough/col/secrets.html') -80px -240px; }
+.sc15 { background:url('walkthrough/col/secrets.html') -160px -240px; }
+.sc16 { background:url('walkthrough/col/secrets.html') -240px -240px; }
+/* Secret Rooms */
+.sr1 { background:url('walkthrough/col/rooms.html') 0 0; }
+.sr2 { background:url('walkthrough/col/rooms.html') -80px 0; }
+.sr3 { background:url('walkthrough/col/rooms.html') -160px 0; }
+.sr4 { background:url('walkthrough/col/rooms.html') 0 -80px; }
+.sr5 { background:url('walkthrough/col/rooms.html') -80px -80px; }
+.sr6 { background:url('walkthrough/col/rooms.html') -160px -80px; }
+/* NG+ Capsules */
+.cp1 { background:url('walkthrough/col/capsules.html') 0 0; }
+.cp2 { background:url('walkthrough/col/capsules.html') -80px 0; }
+.cp3 { background:url('walkthrough/col/capsules.html') -160px 0; }
+.cp4 { background:url('walkthrough/col/capsules.html') 0 -80px; }
+.cp5 { background:url('walkthrough/col/capsules.html') -80px -80px; }
+.cp6 { background:url('walkthrough/col/capsules.html') -160px -80px; }
+/* NG+ Capsule Rewards */
+.cr1 { background:url('walkthrough/col/capsules.html') 0 -160px; }
+.cr2 { background:url('walkthrough/col/capsules.html') -32px -160px; }
+.cr3 { background:url('walkthrough/col/capsules.html') -64px -160px; }
+.cr4 { background:url('walkthrough/col/capsules.html') -96px -160px }
+.cr5 { background:url('walkthrough/col/capsules.html') -128px -160px }
+.cr6 { background:url('walkthrough/col/capsules.html') -160px -160px }
+.cr7 { background:url('walkthrough/col/capsules.html') -192px -160px }
+
+/* Backgrounds */
+.bk0 { background:#000011 repeat fixed left; }
+.bkBlack { background:#000000 repeat fixed left; }
+.bkBlue { background:#0C2135 url('bkBlue.html') repeat fixed left; }
+.bkDawn { background:#BC4E2D url('bkDawn.html') repeat-x fixed bottom; background-size:contain; }
+.bkDusk { background:#040011 url('bkDusk.html') repeat-x fixed bottom; background-size:contain; }
+.bkFaci { background:#202929 url('bkFaci.html') repeat fixed left; }
+.bkFog { background:#A598AD url('bkFog.html') repeat-x fixed bottom; background-size:contain; }
+.bkFrag { background:#3E2A15 url('bkFrag.html') repeat fixed left; }
+.bkFragb { background:#0C2135 url('bkFragB.html') repeat fixed left; }
+.bkFragg { background:#162506 url('bkFragG.html') repeat fixed left; }
+.bkFragp { background:#1C0E31 url('bkFragP.html') repeat fixed left; }
+.bkGard { background:#401000 url('bkGard.html') repeat fixed left; }
+.bkGardbb { background:#0C2135 url('bkGardBB.html') repeat fixed left; }
+.bkGardbg { background:#0C2135 url('bkGardBG.html') repeat fixed left; }
+.bkGardgg { background:#162506 url('bkGardGG.html') repeat fixed left; }
+.bkGardgt { background:#162506 url('bkGardGT.html') repeat fixed left; }
+.bkGreen { background:#162506 url('bkGreen.html') repeat fixed left; }
+.bkMaze { background:#001A16 url('bkMaze.html') repeat fixed left; }
+.bkMisery { background:#040816 url('bkMisery.html') repeat fixed left; }
+.bkMoon { background:#000000 url('bkMoon.html') repeat-x fixed bottom; background-size:contain; }
+.bkNull { background:#000011 url('bkNull.html') repeat-x fixed bottom; background-size:contain; }
+.bkPurple { background:#1C0E31 url('bkPurple.html') repeat fixed left; }
+.bkRed { background:#2A0600 url('bkRed.html') repeat fixed left; }
+.bkRust { background:#3E2A15 url('bkRust.html') repeat fixed left; }
+.bkStars { background:#000000 url('bkStars.html') repeat fixed left; }
+.bkStorm { background:#26303C url('bkStorm.html') repeat-x fixed bottom; background-size:contain; }
+.bkUnderside { background:#000000 url('bkUnderside.html') repeat-x fixed bottom; background-size:contain; }
+.bkWater { background:#000000 url('bkWater.html') repeat-x fixed left 75%; }
+
+/* End of file */
